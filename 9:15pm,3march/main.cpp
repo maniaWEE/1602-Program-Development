@@ -105,9 +105,9 @@ int main()
     backpack.print_Coords_list();
 
     //how to get coords of a specific parasites and resources
-    std::array<double, 2> placeholder = backpack.getCoords_of(1); //resources
+    std::array<double, 2> placeholder = backpack.getCoords_of(1); //resource of index 1
     std::cout << "Resource Coordinate: {" << placeholder[0] << "," << placeholder[1] << "}" << std::endl;
-    placeholder = parasites.getCoords_of(1); //parasites
+    placeholder = parasites.getCoords_of(1); //parasite of index 1
     std::cout << "Parasite Coordinate: {" << placeholder[0] << "," << placeholder[1] << "}" << std::endl;
 
     //when collide with parasite --> set new health of survivor
@@ -135,3 +135,4 @@ int main()
 
     return 0;
 }
+
