@@ -25,11 +25,11 @@ Survivor::Survivor()
     immunity = immunityDist(gen);
     health = healthDist(gen);
 
-    coords_of_survivors = {0.0, 0.0};
+    coords_of_survivor = {0.0, 0.0};
 }
 
-void Survivor::getCoord_of_survivors() {
-    std::cout << "x coord: " << coords_of_survivors[0] << " y coord: " << coords_of_survivors[1] << std::endl;
+void Survivor::getCoord_of_survivor() {
+    std::cout << "x coord: " << coords_of_survivor[0] << " y coord: " << coords_of_survivor[1] << std::endl;
 }
 int Survivor::getStep_length() {
     return step_length ;
@@ -70,13 +70,13 @@ double Survivor::movesurvivor(FILE* plot, int id){
 
     double angle = angle_rand(gen);
 
-    double x = coords_of_survivors[0];
-    double y = coords_of_survivors[1];
+    double x = coords_of_survivor[0];
+    double y = coords_of_survivor[1];
     double new_x = x + (step_length*std::cos(angle));
     double new_y = y + (step_length*std::sin(angle));
 
-    coords_of_survivors[0] = new_x;
-    coords_of_survivors[1] = new_y;
+    coords_of_survivor[0] = new_x;
+    coords_of_survivor[1] = new_y;
 
     // Calculate distance per step
     double changeX = new_x - x;
@@ -87,14 +87,14 @@ double Survivor::movesurvivor(FILE* plot, int id){
     x = new_x;
     y = new_y;
 
-    std::cout << coords_of_survivors[0] << " " << coords_of_survivors[1] << std::endl;
+    std::cout << coords_of_survivor[0] << " " << coords_of_survivor[1] << std::endl;
 
     // reminder remember what id belongs to which survivor, 3 ids = 3 survivors
-    drawCircle(plot, 10000+id, coords_of_survivors, "survivor");
+    drawCircle(plot, 10000+id, coords_of_survivor, "survivor");
 
     //Clamp cuz flying everywhere
-    coords_of_survivors[0] = std::clamp(coords_of_survivors[0], -50.0, 50.0);
-    coords_of_survivors[1] = std::clamp(coords_of_survivors[1], -50.0, 50.0);
+    coords_of_survivor[0] = std::clamp(coords_of_survivor[0], -50.0, 50.0);
+    coords_of_survivor[1] = std::clamp(coords_of_survivor[1], -50.0, 50.0);
     return distance;
 }
 
@@ -118,8 +118,8 @@ bool Survivor::detect_Hit(std::vector<std::array<double,2>> coords_list, double 
     for (size_t i = 0; i < coords_list.size(); i++){
         //iterate thru each stalker/resource/parasite (type)
         //calc dist between survivor and type
-        double dist_between = std::sqrt( std::pow( (coords_of_survivors[0]-coords_list[i][0]) , 2)
-                                       + std::pow( (coords_of_survivors[1]-coords_list[i][1]) , 2) );
+        double dist_between = std::sqrt( std::pow( (coords_of_survivor[0]-coords_list[i][0]) , 2)
+                                       + std::pow( (coords_of_survivor[1]-coords_list[i][1]) , 2) );
         if (dist_between <= radius){
             return true; // return true, function immediately finishes
         }
@@ -127,3 +127,4 @@ bool Survivor::detect_Hit(std::vector<std::array<double,2>> coords_list, double 
     //managed to get out of iterating ALL points, means no collision
     return false;
 }
+
