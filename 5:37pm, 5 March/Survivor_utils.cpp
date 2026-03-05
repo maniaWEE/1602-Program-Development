@@ -23,7 +23,7 @@ Survivor::Survivor()
 
     step_length = stepDist(gen);
     immunity = immunityDist(gen);
-    health = healthDist(gen);
+    maxhealth = healthDist(gen);
 
     coords_of_survivor = {0.0, 0.0};
 }
@@ -39,10 +39,12 @@ int Survivor::getStep_length() {
 int Survivor::getImmunity() {
     return immunity ;
 }
-int Survivor::getHealth() {
-    return health ;
+int Survivor::getmaxHealth() {
+    return maxhealth ;
 }
-
+int Survivor::getcurrentHealth() {
+    return currenthealth ;
+}
 
 
 void Survivor::randStep_length(){
@@ -107,11 +109,12 @@ double Survivor::movesurvivor(FILE* plot, int id){
 void Survivor::GetInfo(){
     std::cout << "StepLength: " << step_length << std::endl;
     std::cout << "Immunity: " << immunity << std::endl;
-    std::cout << "Health: " << health << std::endl;
+    std::cout << "MaxHealth: " << maxhealth << std::endl;
+    std::cout << "Current Health: " << currenthealth << std::endl;
 }
 
 void Survivor::setHealth(int newHealth){
-    health = newHealth;
+    currenthealth = newHealth;
     }
 
 bool Survivor::detect_Hit(std::vector<std::array<double,2>> coords_list, double radius){
@@ -129,6 +132,7 @@ bool Survivor::detect_Hit(std::vector<std::array<double,2>> coords_list, double 
     //managed to get out of iterating ALL points, means no collision
     return false;
 }
+
 
 
 
