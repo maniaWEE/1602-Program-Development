@@ -31,9 +31,11 @@ Survivor::Survivor()
 void Survivor::getCoord_of_survivor() {
     std::cout << "x coord: " << coords_of_survivor[0] << " y coord: " << coords_of_survivor[1] << std::endl; // Change back when u use
 }
+/*
 int Survivor::getStep_length() {
     return step_length ;
 }
+*/
 int Survivor::getImmunity() {
     return immunity ;
 }
@@ -127,6 +129,7 @@ bool Survivor::detect_Hit(std::vector<std::array<double,2>> coords_list, double 
     //managed to get out of iterating ALL points, means no collision
     return false;
 }
+
 
 
 
