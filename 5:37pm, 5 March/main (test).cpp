@@ -21,8 +21,8 @@ void timestep(){
     std::cin.get();   // waits for Enter
 }
 */
-// NEED TO DELETE RANDOM TESTS
 
+//===================================TESTING==============================================
 double pi = 3.14159265;
 
 int main()
@@ -35,11 +35,12 @@ int main()
     Survivor survivor2;
     Survivor survivor3;
 
+    //Declare stalkers
     Stalker stalker1;
     Stalker stalker2;
     Stalker stalker3;
 
-    // Declare stalkers
+
 
 /*
     survivor1.GetInfo();//Just to see if random
@@ -52,7 +53,7 @@ int main()
     int health = 0;
     auto plot = setup();
 
-    // =============== PARASITE ====================================
+//===================================PARASITE TESTS==============================================
     //testing the spread and let it run by itself
 /*
     int i = 0;
@@ -87,7 +88,7 @@ int main()
     //std::cout << "deducted survivor health: " << parasites.deduct_Health(2, 100) << std::endl;
 
 
-    // =============== BACKPACK ====================================
+//===================================BACKPACK TESTS==============================================
     /* testing basic stuff
     std::cout << backpack.getResources();
     backpack.picked_up_resources();
@@ -158,8 +159,7 @@ int main()
     //drawCircle function in utils to have ur stuffs
 
 
-
-// =============== STALKER ====================================
+//===================================STALKER TESTS==============================================
     //test stalker movement and resource depletion
 
 /*
@@ -187,8 +187,9 @@ while (true){
     // resource loss test
     //std::cout << "deducted survivor health: " << parasites.deduct_Health(2, 100) << std::endl;
 
-
+//===================================SURVIVOR TESTS==============================================
     // Actual Loop & Distance Calculation
+/*
    for (int i=0; i<50; i++){
     survivor1.movesurvivor(plot, 1);
     survivor2.movesurvivor(plot, 2);
@@ -199,6 +200,7 @@ while (true){
 std::cout << "Total distance of surv 1: " << survivor1.getTotalDistance() << std::endl;
 std::cout << "Total distance of surv 2: " << survivor2.getTotalDistance() << std::endl;
 std::cout << "Total distance of surv 3: " << survivor3.getTotalDistance() << std::endl;
+*/
 
     std::cout << "Press Enter to end terminal/GNUPlot" << std::endl;
     std::cin.get();   // waits for Enter
@@ -207,3 +209,4 @@ std::cout << "Total distance of surv 3: " << survivor3.getTotalDistance() << std
 
     return 0;
 }
+
