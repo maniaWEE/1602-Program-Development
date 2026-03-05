@@ -12,7 +12,7 @@
 
 constexpr double pi = 3.14159265;
 
-voide Survivor::SurvivorSetup()
+Survivor::Survivor()
 {
     static std::random_device rd;
     static std::mt19937 gen(rd());
@@ -132,6 +132,7 @@ bool Survivor::detect_Hit(std::vector<std::array<double,2>> coords_list, double 
     //managed to get out of iterating ALL points, means no collision
     return false;
 }
+
 
 
 
