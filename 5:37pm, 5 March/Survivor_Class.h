@@ -19,7 +19,7 @@ public:
 
     // Calling Methods
     void getCoord_of_survivor() ;
-    int getStep_length() ;
+    //int getStep_length() ;
     int getImmunity() ;
     int getHealth();
     void randStep_length();
@@ -33,4 +33,5 @@ public:
 
 };
 #endif // SURVIVOR_CLASS_H_INCLUDED
+
 
