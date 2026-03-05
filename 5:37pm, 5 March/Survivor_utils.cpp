@@ -42,7 +42,7 @@ int Survivor::getHealth() {
 }
 
 
-/*
+
 void Survivor::randStep_length(){
     static std::random_device rd;         // Step 1: random seed
     static std::mt19937 gen(rd());        // Step 2: engine
@@ -61,7 +61,7 @@ void Survivor::randImmunity(){
     static std::mt19937 gen(rd());        // Step 2: engine
     std::uniform_int_distribution<int> immunityrand(1, 3);  // Step 3: distribution for step length from 5-15
 }
-*/
+
 
 double Survivor::movesurvivor(FILE* plot, int id){
     static std::random_device rd;         // Step 1: random seed
@@ -127,4 +127,5 @@ bool Survivor::detect_Hit(std::vector<std::array<double,2>> coords_list, double 
     //managed to get out of iterating ALL points, means no collision
     return false;
 }
+
 
