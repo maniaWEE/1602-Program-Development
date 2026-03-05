@@ -12,7 +12,8 @@ public:
     std::array<double, 2> coords_of_survivor {0,0};
     int step_length = 0; // Integer from 3-8
     int immunity = 0;
-    int health = 0;
+    int maxhealth = 0;
+    int currenthealth = 0;
     double total_distance = 0;
     // Constructor
     Survivor();
@@ -21,7 +22,8 @@ public:
     void getCoord_of_survivor() ;
     //int getStep_length() ;
     int getImmunity() ;
-    int getHealth();
+    int getmaxHealth();
+    int getcurrentHealth();
     void randStep_length();
     void randHealth();
     void randImmunity();
@@ -33,5 +35,6 @@ public:
 
 };
 #endif // SURVIVOR_CLASS_H_INCLUDED
+
 
 
