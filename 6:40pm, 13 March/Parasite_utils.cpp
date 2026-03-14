@@ -60,7 +60,7 @@ int Parasite::deduct_Health(int currentHealth){
             newhp = surv_current_hp - 4; // deduct 4 health
             break;
         default:
-            std::cout << "DID U PUT SOMETHING ELSE??????, fuck u." << std::endl;
+            std::cout << "DID U PUT SOMETHING ELSE??????" << std::endl;
             return surv_current_hp - 10000; //kys
     }
 */
