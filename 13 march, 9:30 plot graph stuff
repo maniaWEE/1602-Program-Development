@@ -50,7 +50,7 @@ int main()
             else{
                 if (survivor.getHealth() <= 0){
                     stepLengthGraph_lose.push_back(survivor.getStepLength()); // Push back step length
-                    std::cout << "LOSE U IDIOT" << std::endl;
+                    std::cout << "LOSE" << std::endl;
                     distanceGraph_lose.push_back(survivor.getTotalDistance());
                     done = true; // end the loop
                 }
