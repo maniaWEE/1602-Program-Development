@@ -59,7 +59,7 @@ int Parasite::deduct_Health(int immunity_level, int surv_current_hp){
         case 2: //level 1
             return surv_current_hp - 9; // deduct 9 health
         default:
-            std::cout << "DID U PUT SOMETHING ELSE??????, fuck u." << std::endl;
+            std::cout << "DID U PUT SOMETHING ELSE??????" << std::endl;
             return surv_current_hp - 10000; //kys
     }
 }
